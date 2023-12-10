@@ -7,7 +7,7 @@ interface AppProps {
 
 type Render = (delta: number, elapsed: number) => void;
 
-export default class App {
+export default class Canvas {
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
   width!: number;

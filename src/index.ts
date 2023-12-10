@@ -1,16 +1,16 @@
-import App from "./App";
+import Canvas from "./Canvas";
 
-const app = new App({
+const canvas = new Canvas({
   canvas: document.querySelector("canvas")!,
   resizeTo: window,
   backgroundColor: "#000",
   fps: 144,
 });
 
-const { ctx } = app;
+const { ctx } = canvas;
 const pos = { x: 0, y: 0 };
-app.render = (delta, elapsed) => {
-  ctx.clearRect(0, 0, app.stageWidth, app.stageHeight);
+canvas.render = (delta, elapsed) => {
+  ctx.clearRect(0, 0, canvas.stageWidth, canvas.stageHeight);
   pos.x++;
   pos.y++;
   ctx.beginPath();
