@@ -26,7 +26,6 @@ export default class Canvas {
   private _render?: Render;
 
   constructor(props: AppProps) {
-    /* SET */
     this.canvas = props.canvas;
     this.ctx = this.canvas.getContext("2d")!;
     this.resizeTo = props.resizeTo || this.canvas.parentElement!;
@@ -37,7 +36,6 @@ export default class Canvas {
     this.delta = 0;
     this.elapsed = 0;
 
-    /* INIT */
     this.setSize(this.resizeTo);
     window.addEventListener("resize", () => {
       this.setSize(this.resizeTo);
@@ -45,6 +43,7 @@ export default class Canvas {
   }
 
   private setSize(parent: HTMLElement | Window) {
+    /* FIT TO PARENT */
     if (parent instanceof Window) {
       /* window */
       this.width = parent.innerWidth;
